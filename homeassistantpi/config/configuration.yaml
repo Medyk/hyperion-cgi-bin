@@ -1,0 +1,6 @@
+default_config:
+
+# ...
+binary_sensor: !include binary_sensors.yaml
+rest_command: !include rest_commands.yaml
+# ...

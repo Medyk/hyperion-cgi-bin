@@ -1,0 +1,6 @@
+- platform: rest
+  name: hyperion
+  resource: http://hyperionpi/cgi-bin/hyperion/status
+  value_template: '{{ value_json.state }}'
+  headers:
+    authorization: !secret hyperionpi_basicauth

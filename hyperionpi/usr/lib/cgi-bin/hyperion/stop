@@ -1,0 +1,12 @@
+#!/bin/sh
+
+COMMAND="stop"
+RESULT=`sudo systemctl $COMMAND hyperion; echo -n $?`
+JSON_STRING=$( jq -n \
+                  --arg command "$COMMAND" \
+                  --arg result "$RESULT" \
+                  '{command: $command, result: $result}' )
+
+echo "Content-Type: application/json;charset=utf-8"
+echo ""
+echo $JSON_STRING

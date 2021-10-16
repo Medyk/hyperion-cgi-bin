@@ -1,0 +1,9 @@
+- platform: template
+  switches:
+    hyperion:
+      value_template: "{{ is_state('binary_sensor.hyperion', 'on') }}"
+      turn_on:
+        service: rest_command.hyperion_start
+      turn_off:
+        service: rest_command.hyperion_stop
+      friendly_name: Hyperion Switch

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+COMMAND="status"
+STATE=`systemctl -n 0 $COMMAND hyperion | grep -c "Active: active (running)"`
+JSON_STRING=$( jq -n \
+                  --arg command "$COMMAND" \
+                  --arg state "$STATE" \
+                  '{command: $command, state: $state}' )
+
+echo "Content-Type: application/json;charset=utf-8"
+echo ""
+echo $JSON_STRING

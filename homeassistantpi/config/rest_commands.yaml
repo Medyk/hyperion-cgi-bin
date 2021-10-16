@@ -1,0 +1,8 @@
+hyperion_start:
+  url: "http://hyperionpi/cgi-bin/hyperion/start"
+  headers:
+    authorization: !secret hyperionpi_basicauth
+hyperion_stop:
+  url: "http://hyperionpi/cgi-bin/hyperion/stop"
+  headers:
+    authorization: !secret hyperionpi_basicauth

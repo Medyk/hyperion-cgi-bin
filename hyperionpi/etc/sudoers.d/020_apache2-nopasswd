@@ -1,0 +1,6 @@
+Cmnd_Alias HYPERION_START_CMD=/bin/systemctl start hyperion
+Cmnd_Alias HYPERION_STOP_CMD=/bin/systemctl stop hyperion
+Cmnd_Alias HYPERION_RESTART_CMD=/bin/systemctl restart hyperion
+Cmnd_Alias HYPERION_STATUS_CMD=/bin/systemctl status hyperion
+
+www-data ALL=(ALL) NOPASSWD: HYPERION_START_CMD,HYPERION_STOP_CMD,HYPERION_RESTART_CMD,HYPERION_STATUS_CMD
